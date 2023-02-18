@@ -32,9 +32,9 @@ alter table person add column state varchar(2)
 --rollback ALTER TABLE company DROP COLUMN country;
 alter table company add column country varchar(2)
 
---changeset felice:6
+--changeset other.dev:6
 --rollback DROP TABLE felice;
 CREATE TABLE felice (
 id int primary key,
-name varchar(50) not null,
+name varchar(50) not null
 )
