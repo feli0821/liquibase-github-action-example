@@ -19,12 +19,12 @@ jobs:
     - name: Run 'Liquibase status' in a Docker Container	    
       uses: docker://liquibase/liquibase:latest
       with:
-        args: --url="jdbc:h2:mem:cicd" --changeLogFile=./example/changelogs/samplechangelog.h2.sql --username=dbuser --password=letmein status --verbose
+        args: --url="jdbc:h2:mem:dev;schema=cicd" --changeLogFile=./example/changelogs/samplechangelog.h2.sql --username=dbuser --password=letmein status --verbose
     
     - name: Run 'Liquibase update' in a Docker Container
       uses: docker://liquibase/liquibase:latest
       with:
-        args: --url="jdbc:h2:mem:cicd" --changeLogFile=./example/changelogs/samplechangelog.h2.sql --username=dbuser --password=letmein --logLevel=debug update
+        args: --url="jdbc:h2:mem:dev;schema=cicd" --changeLogFile=./example/changelogs/samplechangelog.h2.sql --username=dbuser --password=letmein --logLevel=debug update
 
         
         
